@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <card cardTitle="Justified products">
+      <tabset id="tabs3" theme="justified">
+        <tab-content for="tabs3" tabTitle="product fields" [active]="true">
+          <div class="form-group">
+            <label class="control-label">OrginalName</label>
+            <input type="text" class="form-control" placeholder="OrginalName" [(ngModel)]="model.orginalName">
+            <label class="control-label">Title</label>
+            <input type="text" class="form-control" placeholder="Title" [(ngModel)]="model.title">
+            <label class="control-label">Description</label>
+            <input type="text" class="form-control" placeholder="Description" [(ngModel)]="model.description">
+            <!-- <span class="help-block sub-little-text"> -->
+              <label class="control-label">category</label>
+              <select name="selectcategory" id="select1" class="form-control"
+                [ngModel]="selectedcategory" (ngModelChange)="onChangeObj($event)" >
+                <option *ngFor="let c of categorydrp" [value]="c.id" >{{c.name}}</option>
+              </select>
+            <!-- </span> -->
+          </div>
+          <div>
+              
+              <button   class="btn btn-lg btn-primary"  (click)="addproduct()" >add product</button>
+          </div>
+        </tab-content>
+       
+        <tab-content for="tabs3" tabTitle="Product Properties">
+          <p>
+            <app-product-property
+             
+              #child ></app-product-property>
+          </p>
+        </tab-content>
+
+        <tab-content for="tabs3" tabTitle="Images">
+          <p>
+            <app-image-product [photos]="model.images"></app-image-product>
+          </p>
+        </tab-content>
+      </tabset>
+    </card>
+  </div>
+</div>

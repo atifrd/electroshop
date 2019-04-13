@@ -1,0 +1,14 @@
+@import "../../../shared/theme/color-schemes/_default.scss";
+.check-label,
+.radio-label {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    >.form-control {
+        margin-bottom: 10px;
+    }
+    >.help-block {
+        margin-top: -10px;
+    }
+}

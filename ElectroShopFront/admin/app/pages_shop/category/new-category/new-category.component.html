@@ -1,0 +1,15 @@
+
+<div class="row">
+  <div class="col-md-12">
+
+    <!-- form-group form-control control-label ↓↓↓↓↓↓↓↓↓ -->
+    <card cardTitle="Add new category" isCollapse="true">
+      <div class="form-group">
+        <label class="control-label">Category name</label>
+        <input type="text" class="form-control" placeholder="name"  #catInput >
+        <p></p>
+        <button class="btn btn-lg btn-primary" (click)="addCategory(catInput.value)">Add</button>
+      </div>
+    </card>
+  </div>
+  </div>

@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-12">
+    <form #catProForm="ngForm">
+      <!-- form-group form-control control-label ↓↓↓↓↓↓↓↓↓ -->
+      <card cardTitle="Add property for  {{categoryname}}"   isCollapse="true">
+        <div class="form-group">
+          <div class="col-md-4">
+            <label class="control-label">Name</label>
+            <input type="text" class="form-control" placeholder="Name"  required name="name"
+              [(ngModel)]="model.name">
+            <label class="control-label">OroginalName</label>
+            <input type="text" class="form-control" placeholder="OroginalName" required name="originalName"
+              [(ngModel)]="model.oroginalName">
+            <label class="control-label">Description</label>
+            <input type="text" class="form-control" placeholder="Description" [(ngModel)]="model.description"
+              name="description" required>
+            <span class="help-block sub-little-text">A block of help text that breaks onto a new line and may extend
+              beyond one line.</span>
+
+            <label class="control-label">ControlType</label>
+            <select name="selectControlType" id="select1" class="form-control" [(ngModel)]="model.controlType"
+              name='controlType'>
+              <option value="Text">Text</option>
+              <option value="Select">Select</option>
+              <option value="checkbox">checkbox</option>
+            </select>
+            <label class="control-label">ValueType</label>
+            <select name="selectValueType" id="select2" class="form-control" [(ngModel)]="model.valueType"
+              name='valueType'>
+              <option value="number">number</option>
+              <option value="text">text</option>
+              <option value="bool">bool</option>
+
+            </select>
+          </div>
+
+          <div class="col-md-8">
+            <input class="checkbox checkbox-info" type="checkbox" id="color-checkbox6" checked
+              [(ngModel)]="model.required" name='requiredcheckbox'>
+            <label class="check-label" for="color-checkbox6">Required</label>
+            <input class="checkbox checkbox-info" type="checkbox" id="color-checkbox" checked
+            [(ngModel)]="model.isSearchable" name='isSearchableCheckbox'>
+          <label class="check-label" for="color-checkbox">IsSearchable</label>
+          </div>
+
+         
+          <div class="col-md-12">
+          <button type="submit" [disabled]="!catProForm.valid" class="btn btn-lg btn-primary"
+            (click)="AddProperty(catProForm)">Add</button>
+            </div>
+        </div>
+      </card>
+
+    </form>
+
+    <card cardTitle="property List">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>oroginalName</th>
+            <th>controlType</th>
+            <th>valueType</th>
+            <th>description</th>
+            <th>required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="abcd(item)"
+            *ngFor="let item of tableData | paginate: { id: 'pager', itemsPerPage: pageSize, currentPage: pageNumber};let index = index">
+            <td>{{item.name}}</td>
+            <td>{{item.oroginalName}}</td>
+            <td>{{item.controlType}}</td>
+            <td>{{item.valueType}}</td>
+            <td>{{item.description}}</td>
+            <td>
+              <!-- <span class="label label-info">info</span> -->
+              <input type="checkbox" [ngModel]="item.required" disabled="true">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <form class="pagination-wrapper">
+        <div class="form-group pages">
+          <pagination-controls class="my-pagination" id="pager" (pageChange)="pageChanged($event)" maxSize="9"
+            directionLinks="true" autoHide="true" previousLabel="Prev" nextLabel="Next"
+            screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page">
+          </pagination-controls>
+        </div>
+        <div class="form-group options pages">
+          <div class="input-group input-group-sm">
+            <select class="form-control" name="pageChangedName" [(ngModel)]="pageSize" (ngModelChange)="loadData()">
+              <option>1</option>
+              <option>5</option>
+              <option>10</option>
+            </select>
+            <span class="input-group-addon addon-right">Per Page</span>
+          </div>
+        </div>
+      </form>
+    </card>
+
+
+  </div>
+</div>

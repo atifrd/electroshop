@@ -1,0 +1,11 @@
+
+@import "../../../shared/theme/color-schemes/_default.scss";
+
+.form-group {
+    >.form-control {
+        margin-bottom: 10px;
+    }
+    >.help-block {
+        margin-top: -10px;
+    }
+}

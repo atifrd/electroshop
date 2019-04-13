@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.sideBar.location": "right",
+    "workbench.tree.horizontalScrolling": true,
+    "workbench.view.alwaysShowHeaderActions": true,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.centerLayout": false,
+    "zenMode.hideActivityBar": false,
+    "zenMode.fullScreen": true,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true
+    }
+}

@@ -1,0 +1,33 @@
+<p>
+  </p>
+    <div class="row">
+        <div class="col-md-12">
+           
+          <card cardTitle="fill product properties value">
+              
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>property</th>
+                  <th>value</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr #trRef *ngFor="let item of tableData;let i=index;" >
+                 
+                  <td >{{item.propertyName}} {{item.propertyId}}</td>
+                  <td >
+                     <input  type="text" #propertyValue [(ngModel)]="item.propertyValue" >
+                  </td>
+                
+                  </tr>
+              </tbody>
+            </table>
+           <div>
+           <button  class="btn btn-lg btn-primary"  (click)=addproductProperties()>Add</button> 
+           </div>
+           
+          </card>
+        </div>
+      </div>

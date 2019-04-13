@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+<p>
+  {{categoryTitle.name}}
+</p>
+ <file-tree [model]="x1" (reFillGrid)="catpro.loadData()" ></file-tree> 
+ </div>
+ <div class="col-md-8">
+ <tabset id="tabs3" theme="justified">
+  <tab-content for="tabs3" tabTitle="category" [active]="true" >
+ <app-new-category  (updateTreeInparent)="updateTreebychild()"></app-new-category>
+</tab-content>
+       
+<tab-content for="tabs3" tabTitle="category Properties">
+
+<app-category-property #catpro></app-category-property> 
+</tab-content>
+</tabset>
+</div>
+</div>
